@@ -1,4 +1,5 @@
 import { useOutletContext } from "react-router-dom";
+import FridgeIndex from "./Fridges/FridgeIndex";
 
 const Dashboard = ({ handleLogout }) => {
   const { user } = useOutletContext(); // Access user data provided by the Outlet's context
@@ -19,6 +20,8 @@ const Dashboard = ({ handleLogout }) => {
       {/* Use user data as needed, for example: */}
 
       <button onClick={handleLogout}>Logout</button>
+
+      <FridgeIndex userId={user.id}/>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import NavBar from "./Components/NavBar";
 import LandingPage from "./Components/LandingPage";
+import Show from "./Pages/Show";
 
 function App() {
   const navigate = useNavigate();
@@ -44,6 +45,10 @@ function App() {
           <Route
             path="/dashboard"
             element={<Dashboard handleLogout={handleLogout} />}
+          />
+          <Route
+            path="/fridges/:fridge_id"
+            element={<Show />}
           />
         </Route>
       </Routes>
