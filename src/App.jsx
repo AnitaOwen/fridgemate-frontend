@@ -12,6 +12,7 @@ import Show from "./Pages/Show";
 function App() {
   const navigate = useNavigate();
   const [toggleLogin, setToggleLogin] = useState(false);
+  const [items, setItems] = useState([]);
 
   async function handleLogout() {
     localStorage.removeItem("token");
@@ -48,7 +49,7 @@ function App() {
           />
           <Route
             path="/fridges/:fridge_id"
-            element={<Show />}
+            element={<Show items={items} setItems={setItems}/>}
           />
         </Route>
       </Routes>

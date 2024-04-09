@@ -1,8 +1,8 @@
 import FridgeDetails from "../Components/Fridges/FridgeDetails"
-const Show = () => {
+const Show = ({ items, setItems}) => {
   return (
     <div>
-        <FridgeDetails />
+        <FridgeDetails items={items} setItems={setItems} />
     </div>
   )
 }
