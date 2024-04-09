@@ -32,7 +32,7 @@ const FridgeDetails = ({ items, setItems }) => {
             </section>
         )}
 
-        <ItemIndex items={items} setItems={setItems} />
+        <ItemIndex fridge_id={fridge_id} items={items} setItems={setItems} />
     </div>
   )
 }
