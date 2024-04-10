@@ -45,7 +45,7 @@ const FridgeNewForm = () => {
           required
         />
         <label htmlFor="notes">Notes:</label>
-        <input
+        <textarea rows="3" cols="30"
           id="notes"
           type="text"
           placeholder="Enter notes here"
