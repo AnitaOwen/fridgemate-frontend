@@ -31,6 +31,7 @@ const FridgeDetails = ({ items, setItems }) => {
                 <p>{fridge.notes}</p>
             </section>
         )}
+        {/* <Link to={`/fridges/${fridge_id}/items/new`}>Add an item to your fridge</Link> */}
 
         <ItemIndex fridge_id={fridge_id} items={items} setItems={setItems} />
     </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Fridge from "./Fridge";
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -16,6 +17,7 @@ const FridgeIndex = ({userId}) => {
   return (
     <div>
         <h2>My Fridges</h2>
+        <Link to={`/fridges/new`}>Add an item to your fridge</Link>
         {fridges.map((fridge) => (
             <Fridge key={fridge.id} fridge={fridge} />
         ))}

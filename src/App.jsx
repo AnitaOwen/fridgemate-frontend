@@ -8,6 +8,7 @@ import Dashboard from "./Components/Dashboard";
 import NavBar from "./Components/NavBar";
 import LandingPage from "./Components/LandingPage";
 import Show from "./Pages/Show";
+import AddFridge from "./Pages/AddFridge";
 
 function App() {
   const navigate = useNavigate();
@@ -50,6 +51,10 @@ function App() {
           <Route
             path="/fridges/:fridge_id"
             element={<Show items={items} setItems={setItems}/>}
+          />
+          <Route
+            path="/fridges/new"
+            element={<AddFridge />}
           />
         </Route>
       </Routes>
