@@ -9,6 +9,7 @@ import NavBar from "./Components/NavBar";
 import LandingPage from "./Components/LandingPage";
 import Show from "./Pages/Show";
 import AddFridge from "./Pages/AddFridge";
+import UpdateFridge from "./Pages/UpdateFridge";
 
 function App() {
   const navigate = useNavigate();
@@ -55,6 +56,10 @@ function App() {
           <Route
             path="/fridges/new"
             element={<AddFridge />}
+          />
+          <Route
+            path="/fridges/:fridge_id/edit"
+            element={<UpdateFridge />}
           />
         </Route>
       </Routes>

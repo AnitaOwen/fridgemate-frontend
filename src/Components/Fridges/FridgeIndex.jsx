@@ -17,7 +17,7 @@ const FridgeIndex = ({userId}) => {
   return (
     <div>
         <h2>My Fridges</h2>
-        <Link to={`/fridges/new`}>Add an item to your fridge</Link>
+        <Link to={`/fridges/new`}>Add another fridge</Link>
         {fridges.map((fridge) => (
             <Fridge key={fridge.id} fridge={fridge} />
         ))}
