@@ -13,18 +13,14 @@ const ItemEditForm = () => {
         amount_paid: "",
         category: ""
     })
-    
-    const handleTextChange = (event) => {
-        setUpdatedItem({ ...updatedItem, [event.target.id]: event.target.value })
-    }
-
-    const handleAmountChange = (event) => {
-        setUpdatedItem({ ...updatedItem, amount_paid: event.target.value });
-    }
 
     const formatDate = (dateString) => {
         const dateStringParts = dateString.split("T")
         return dateStringParts[0]
+    }
+    
+    const handleTextChange = (event) => {
+        setUpdatedItem({ ...updatedItem, [event.target.id]: event.target.value })
     }
 
     const handleSubmit = (event) => {
@@ -90,7 +86,7 @@ const ItemEditForm = () => {
                 id="amount_paid"
                 type="number"
                 value={updatedItem.amount_paid}
-                onChange={handleAmountChange}
+                onChange={handleTextChange}
             />
             <label htmlFor="category">Category:</label>
             <select id="category" value={updatedItem.category} onChange={handleTextChange}>
