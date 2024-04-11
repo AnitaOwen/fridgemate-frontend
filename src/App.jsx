@@ -10,6 +10,7 @@ import LandingPage from "./Components/LandingPage";
 import Show from "./Pages/Show";
 import AddFridge from "./Pages/AddFridge";
 import UpdateFridge from "./Pages/UpdateFridge";
+import Index from "./Pages/Index";
 
 function App() {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ function App() {
           {/* Place protected routes here */}
           <Route
             path="/dashboard"
-            element={<Dashboard handleLogout={handleLogout} />}
+            element={<Index handleLogout={handleLogout} />}
           />
           <Route
             path="/fridges/:fridge_id"
