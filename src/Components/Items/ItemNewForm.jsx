@@ -14,12 +14,13 @@ const ItemNewForm = () => {
         category: ""
       })
 
-    const amountPaidInCents = newItem.amount_paid * 100
+    
 
     const handleTextChange = (event) => {
         setNewItem({ ...newItem, [event.target.id]: event.target.value });
     }
-
+    const amountPaidInCents = newItem.amount_paid * 100
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         // console.log(newItem.expiration_date)
