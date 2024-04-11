@@ -1,7 +1,10 @@
+import ItemNewForm from "../Components/Items/ItemNewForm"
 
 const AddItem = () => {
   return (
-    <div>AddItem</div>
+    <div>
+        <ItemNewForm />
+    </div>
   )
 }
 
