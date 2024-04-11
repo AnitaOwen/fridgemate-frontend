@@ -5,7 +5,6 @@ import Item from "./Item";
 const URL = import.meta.env.VITE_BASE_URL;
 const ItemIndex = ({ fridge_id, items, setItems }) => {
     const { user } = useOutletContext()
-    // console.log(user.id)
 
     useEffect(() => {
         const token = localStorage.getItem("token");
