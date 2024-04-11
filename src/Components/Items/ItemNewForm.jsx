@@ -42,7 +42,7 @@ const ItemNewForm = () => {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/categories`,
+        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/categories/all`,
         {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -51,6 +51,7 @@ const ItemNewForm = () => {
         })
           .then((res) => res.json())
           .then((data) => setCategories(data))
+          .catch((error) => console.error("Failed to set categories.", error))
     }, [user.id, fridge_id]);
 
   return (

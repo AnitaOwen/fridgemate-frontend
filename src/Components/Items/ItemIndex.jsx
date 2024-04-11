@@ -23,7 +23,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
         {items.length === 0 ? (
             <>
                 <p>This fridge is empty! </p>
-                <Link to={`/fridges/${fridge_id}/new`}>
+                <Link to={`/fridges/${fridge_id}/items/new`}>
                     <p>Add an item to this fridge.</p>
                 </Link> 
             </>      

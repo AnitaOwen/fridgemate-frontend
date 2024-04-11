@@ -34,8 +34,6 @@ const FridgeDetails = ({ items, setItems }) => {
         {items.length > 0 && (
             <Link to={`/fridges/${fridge_id}/items/new`}>Add an item to this fridge.</Link>
         )}
-        {/* <Link to={`/fridges/${fridge_id}/items/new`}>Add an item to your fridge</Link> */}
-
         <ItemIndex fridge_id={fridge_id} items={items} setItems={setItems} />
     </div>
   )
