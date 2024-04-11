@@ -10,9 +10,11 @@ const ItemNewForm = () => {
     const [newItem, setNewItem] = useState({
         name: "",
         expiration_date: "",
-        amount_paid: "",
+        amount_paid: 0,
         category: ""
       })
+
+    const amountPaidInCents = newItem.amount_paid * 100
 
     const handleTextChange = (event) => {
         setNewItem({ ...newItem, [event.target.id]: event.target.value });
@@ -28,7 +30,7 @@ const ItemNewForm = () => {
         // http://localhost:3003/api/fridges/1/2/items
         fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items`, {
             method: "POST",
-            body: JSON.stringify(newItem),
+            body: JSON.stringify({...newItem, amount_paid: amountPaidInCents}),
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
@@ -49,7 +51,7 @@ const ItemNewForm = () => {
         })
           .then((res) => res.json())
           .then((data) => setCategories(data))
-    }, [fridge_id]);
+    }, [user.id, fridge_id]);
 
   return (
     <div>
@@ -76,7 +78,15 @@ const ItemNewForm = () => {
                 type="number"
                 value={newItem.amount_paid}
                 onChange={handleTextChange}
+                step="0.01" // Allow decimal values
             />
+            <label htmlFor="category">Category:</label>
+            <select id="category" value={newItem.category} onChange={handleTextChange}>
+                <option value="">Select a category</option>
+                {categories.map(category => (
+                    <option key={category} value={category}>{category}</option>
+                ))}
+            </select>
             <br />
             <input type="submit" />
         </form>
