@@ -28,7 +28,7 @@ const FridgeNewForm = () => {
             },
           })
             .then(() => navigate(`/dashboard`))
-            .catch((error) => console.error("Failed to create new fridge", error));
+            .catch((error) => console.error("Failed to create new fridge.", error));
     }
   return (
     <div>

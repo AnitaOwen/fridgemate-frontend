@@ -29,8 +29,10 @@ const FridgeDetails = ({ items, setItems }) => {
             <section>
                 <h3>{fridge.location}</h3>
                 <p>{fridge.notes}</p>
-                <Link to={`/fridges/${fridge_id}/items/new`}>Add an item to this fridge</Link>
             </section>
+        )}
+        {items.length > 0 && (
+            <Link to={`/fridges/${fridge_id}/items/new`}>Add an item to this fridge.</Link>
         )}
         {/* <Link to={`/fridges/${fridge_id}/items/new`}>Add an item to your fridge</Link> */}
 

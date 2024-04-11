@@ -25,7 +25,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
             <>
                 <p>This fridge is empty! </p>
                 <Link to={`/fridges/${fridge_id}/new`}>
-                    <p>Add an item to your fridge.</p>
+                    <p>Add an item to this fridge.</p>
                 </Link> 
             </>      
         ) : (
