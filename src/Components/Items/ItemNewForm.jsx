@@ -19,7 +19,6 @@ const ItemNewForm = () => {
     const handleTextChange = (event) => {
         setNewItem({ ...newItem, [event.target.id]: event.target.value });
     }
-    const amountPaidInCents = newItem.amount_paid * 100
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -31,7 +30,7 @@ const ItemNewForm = () => {
         // http://localhost:3003/api/fridges/1/2/items
         fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items`, {
             method: "POST",
-            body: JSON.stringify({...newItem, amount_paid: amountPaidInCents}),
+            body: JSON.stringify(newItem),
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",

@@ -27,18 +27,13 @@ const ItemEditForm = () => {
         return dateStringParts[0]
     }
 
-    const amountInDollars = (updatedItem.amount_paid / 100).toFixed(2)
-    
-    const amountPaidInCents = updatedItem.amount_paid * 100
-
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(updatedItem.amount_paid/100)
         const token = localStorage.getItem("token");
         // http://localhost:3003/api/fridges/1/2/items/13
         fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/${item_id}`, {
             method: "PUT",
-            body: JSON.stringify({...updatedItem, amount_paid: amountPaidInCents}),
+            body: JSON.stringify(updatedItem),
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
