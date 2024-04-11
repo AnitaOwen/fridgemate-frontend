@@ -22,10 +22,6 @@ const ItemNewForm = () => {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        // console.log(newItem.expiration_date)
-        // 2024-04-11
-        // console.log(categories)
-        // ['Beverage', 'Condiment', 'Dairy', 'Fruit', 'Meat', 'Other', 'Seafood']
         const token = localStorage.getItem("token");
         // http://localhost:3003/api/fridges/1/2/items
         fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items`, {
