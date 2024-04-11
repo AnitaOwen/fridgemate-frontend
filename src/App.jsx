@@ -11,6 +11,7 @@ import Show from "./Pages/Show";
 import AddFridge from "./Pages/AddFridge";
 import UpdateFridge from "./Pages/UpdateFridge";
 import Index from "./Pages/Index";
+import AddItem from "./Pages/AddItem";
 
 function App() {
   const navigate = useNavigate();
@@ -62,7 +63,12 @@ function App() {
             path="/fridges/:fridge_id/edit"
             element={<UpdateFridge />}
           />
+          <Route
+            path="/fridges/:fridge_id/items/new"
+            element={<AddItem />}
+          />
         </Route>
+        
       </Routes>
     </>
   );
