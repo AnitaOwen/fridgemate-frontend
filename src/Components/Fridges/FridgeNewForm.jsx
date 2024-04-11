@@ -27,9 +27,7 @@ const FridgeNewForm = () => {
                 "Content-Type": "application/json",
             },
           })
-            .then(() => {
-              navigate(`/dashboard`);
-            })
+            .then(() => navigate(`/dashboard`))
             .catch((error) => console.error("Failed to create new fridge", error));
     }
   return (
