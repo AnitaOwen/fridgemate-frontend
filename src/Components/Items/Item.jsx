@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom"
 
-const Item = ({ item, fridge_id }) => { 
+const Item = ({ item, fridge_id, handleDeleteItem }) => { 
     const navigate = useNavigate()
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString();
     }
-    const handleEdit = () => {
+    const handleEditItem = () => {
         navigate(`/fridges/${fridge_id}/items/${item.id}/edit`)
     }
   return (
@@ -18,8 +18,8 @@ const Item = ({ item, fridge_id }) => {
         <p><span>amount paid:</span> ${item.amount_paid}</p>
     </div>
     <div>
-        <button onClick={handleEdit}>EDIT</button>
-        <button>DELETE</button>
+        <button onClick={handleEditItem}>EDIT</button>
+        <button onClick={()=>handleDeleteItem(item.id)}>DELETE</button>
     </div>
     </>
   )

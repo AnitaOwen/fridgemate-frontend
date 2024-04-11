@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Fridge from "./Fridge";
 const URL = import.meta.env.VITE_BASE_URL;
 
 const FridgeIndex = ({userId}) => {
     const [fridges, setFridges] = useState([])
-    const navigate = useNavigate()
 
     const handleDeleteFridge = (fridgeId) => {
       const confirmDelete = window.confirm("Are you sure you want to delete this fridge and all items in it?")
