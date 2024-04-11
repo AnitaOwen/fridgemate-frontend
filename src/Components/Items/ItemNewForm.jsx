@@ -78,7 +78,6 @@ const ItemNewForm = () => {
                 type="number"
                 value={newItem.amount_paid}
                 onChange={handleTextChange}
-                step="0.01" // Allow decimal values
             />
             <label htmlFor="category">Category:</label>
             <select id="category" value={newItem.category} onChange={handleTextChange}>
