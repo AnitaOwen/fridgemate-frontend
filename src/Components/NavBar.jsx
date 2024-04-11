@@ -31,7 +31,7 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
     <div className="navbar-container">
       <h2>
         <Link style={{ textDecoration: "none" }} to="/">
-          FridgeM8 (click here to go to Landing Page)
+          FridgeM8
         </Link>
       </h2>
 
@@ -41,7 +41,7 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
         </Link>
       ) : (
         <div>
-          {user && <span>Hello, {user.username.toUpperCase()}? | </span>}
+          {user && <span>Hello, {user.username.toUpperCase()} | </span>}
           <Link onClick={handleLogout}>
             <span>Logout</span>
           </Link>

@@ -6,13 +6,13 @@ const Dashboard = ({ handleLogout }) => {
 
   return (
     <div>
-      {user && (
+      {/* {user && (
         <h1>
           Welcome, {user.username[0].toUpperCase()}
           {user.username.slice(1).toLowerCase()}
         </h1>
       )}
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleLogout}>Logout</button> */}
       <FridgeIndex userId={user.id}/>
     </div>
   );
