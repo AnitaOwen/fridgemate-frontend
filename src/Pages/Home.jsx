@@ -2,10 +2,10 @@ import React from 'react'
 import LandingPage from '../Components/LandingPage'
 import Login from '../Components/Login'
 
-const Home = () => {
+const Home = ({ toggleLogin }) => {
   return (
     <div>
-        <LandingPage />
+        <LandingPage toggleLogin={toggleLogin}/>
     </div>
   )
 }

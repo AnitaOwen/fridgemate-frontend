@@ -29,10 +29,9 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
 
   return (
     <div className="navbar-container">
-      <h1>Navbar Component</h1>
       <h2>
         <Link style={{ textDecoration: "none" }} to="/">
-          Your image or Logo (click here to go to Landing Page)
+          FridgeM8 (click here to go to Landing Page)
         </Link>
       </h2>
 
