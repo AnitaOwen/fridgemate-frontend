@@ -12,6 +12,7 @@ import AddFridge from "./Pages/AddFridge";
 import UpdateFridge from "./Pages/UpdateFridge";
 import Index from "./Pages/Index";
 import AddItem from "./Pages/AddItem";
+import UpdateItem from "./Pages/UpdateItem";
 
 function App() {
   const navigate = useNavigate();
@@ -66,6 +67,10 @@ function App() {
           <Route
             path="/fridges/:fridge_id/items/new"
             element={<AddItem />}
+          />
+          <Route
+            path="/fridges/:fridge_id/items/:item_id/edit"
+            element={<UpdateItem />}
           />
         </Route>
         

@@ -1,9 +1,14 @@
+import { useNavigate } from "react-router-dom"
 
-const Item = ({ item }) => { 
+const Item = ({ item, fridge_id }) => { 
+    const navigate = useNavigate()
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString();
+    }
+    const handleEdit = () => {
+        navigate(`/fridges/${fridge_id}/items/${item.id}/edit`)
     }
   return (
     <>
@@ -13,7 +18,7 @@ const Item = ({ item }) => {
         <p><span>amount paid:</span> ${(item.amount_paid/100).toFixed(2)}</p>
     </div>
     <div>
-        <button>EDIT</button>
+        <button onClick={handleEdit}>EDIT</button>
         <button>DELETE</button>
     </div>
     </>

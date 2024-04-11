@@ -31,7 +31,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
         ) : (
             <>
             {items.map((item) => (
-                <Item key={item.id} item={item} />
+                <Item key={item.id} item={item} fridge_id={fridge_id} />
             ))}
             </>
         )}
