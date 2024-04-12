@@ -28,27 +28,23 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
   }, [toggleLogin]);
 
   return (
-    <div className="navbar-container">
-      <h2>
-        <Link style={{ textDecoration: "none" }} to="/">
-          FridgeM8
-        </Link>
-      </h2>
-
-      {!toggleLogin ? (
-        <Link to={"/login"}>
-          <span>Login</span>
-        </Link>
-      ) : (
-        <div>
-          {user && <span>Hello, {user.username.toUpperCase()} | </span>}
-          <Link onClick={handleLogout}>
-            <span>Logout</span>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
+      <a className="navbar-brand" href="/">FridgeM8</a>
+        {!toggleLogin ? (
+          <Link to={"/login"}>
+            <span>Login</span>
           </Link>
-        </div>
-      )}
-      <hr />
-    </div>
+        ) : (
+          <div>
+            {user && <span>Hello, {user.username.toUpperCase()} | </span>}
+            <Link onClick={handleLogout}>
+              <span>Logout</span>
+            </Link>
+          </div>
+        )}
+      </div>
+    </nav>
   );
 };
 
