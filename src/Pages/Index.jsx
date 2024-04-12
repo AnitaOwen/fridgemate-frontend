@@ -1,9 +1,10 @@
-import Dashboard from "../Components/Dashboard"
 
-const Index = ({ handleLogout }) => {
+import FridgeIndex from "../Components/Fridges/FridgeIndex"
+
+const Index = () => {
   return (
     <div>
-        <Dashboard handleLogout={handleLogout}/>
+      <FridgeIndex />
     </div>
   )
 }

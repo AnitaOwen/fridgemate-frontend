@@ -9,11 +9,26 @@ const Fridge = ({ fridge, handleDeleteFridge }) => {
   }
 
   return (
-    <div>
-        <Link to={`/fridges/${fridge.id}`}>{fridge.location}</Link>
-        <p>{fridge.notes}</p>
-        <button onClick={handleEditFridge}>EDIT</button>
-        <button onClick={()=>handleDeleteFridge(fridge.id)}>DELETE</button>
+    <div className="card mb-3">
+      <div className="card-body">
+        <Link to={`/fridges/${fridge.id}`}><h3>{fridge.location}</h3></Link>
+        <p className="card-text">{fridge.notes}</p>
+        <div className="row">
+        <div className="col-sm-6 mb-2">
+            <button className="btn btn-secondary btn-sm btn-block" onClick={handleEditFridge}>
+              Edit 
+            </button>
+          </div>
+          <div className="col-sm-6">
+            <button className="btn btn-warning btn-sm btn-block" onClick={() => handleDeleteFridge(fridge.id)}>
+              Delete 
+            </button>
+          </div>
+        </div>
+
+      </div>
+        {/* <button onClick={handleEditFridge}>EDIT</button>
+        <button onClick={()=>handleDeleteFridge(fridge.id)}>DELETE</button> */}
     </div>
   )
 }

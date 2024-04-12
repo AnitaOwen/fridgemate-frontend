@@ -16,3 +16,7 @@ textarea{
   text-align: center;
 }
 
+.btn-container {
+  display: flex;
+  gap: 10px;
+}
