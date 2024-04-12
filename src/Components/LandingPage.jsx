@@ -13,7 +13,7 @@ function LandingPage({ toggleLogin }) {
         </>
       ) : (
         <>
-        <h4 className="mt-4">Please  <Link to="/login">login</Link> or <Link to="/login">register</Link> to continue.</h4>
+        <h4 className="mt-4">Please  <Link to="/login">login</Link> or <Link to="/register">register</Link> to continue.</h4>
         </>
       )}
     </div>

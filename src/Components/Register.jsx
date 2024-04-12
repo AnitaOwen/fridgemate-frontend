@@ -45,52 +45,52 @@ const Register = ({ setToggleLogin }) => {
   // USE THIS FORM TO BUILD OUT YOUR FORM PROPERLY BY ADDING LABELS AND INPUTS AS WELL AS WHATEVER CSS FRAMEWORK YOU MAY USE OR VANILLA CSS. THIS IS JUST A BOILERPLATE CODE
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <p className="mt-5 mb-4">
+    <div className="mt-5 center container-sm">
+      <p className="mb-4">
         Already have an account? <Link to="/login">Login</Link>
       </p>
-      <h3 className="mb-2">Register</h3>
+      <h4 className="mb-2 mt-5">Register</h4>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="username" className="form-label">
-            <input
-            className="form-control"
-              id="username"
-              value={user.username}
-              type="text"
-              placeholder="username"
-              onChange={handleChange}
-              autoComplete="username"
-            />
-          </label>
+          {/* <label htmlFor="username" className="form-label">
+          </label> */}
+          <input
+          className="form-control center"
+            id="username"
+            value={user.username}
+            type="text"
+            placeholder="username"
+            onChange={handleChange}
+            autoComplete="username"
+          />
         </div>
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            <input
-            className="form-control"
-              id="email"
-              value={user.email}
-              type="email"
-              placeholder="email"
-              onChange={handleChange}
-              autoComplete="email"
-            />
-          </label>
+          {/* <label htmlFor="email" className="form-label">
+          </label> */}
+          <input
+          className="form-control center"
+            id="email"
+            value={user.email}
+            type="email"
+            placeholder="email"
+            onChange={handleChange}
+            autoComplete="email"
+          />
         </div>
         <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            <input
-            className="form-control"
-              id="password"
-              value={user.password}
-              type="password"
-              placeholder="password"
-              onChange={handleChange}
-              autoComplete="current-password"
-            />
-          </label>
+          {/* <label htmlFor="password" className="form-label">
+          </label> */}
+          <input
+          className="form-control center"
+            id="password"
+            value={user.password}
+            type="password"
+            placeholder="password"
+            onChange={handleChange}
+            autoComplete="current-password"
+          />
         </div>
-        <button className="btn btn-info">Submit</button>
+        <button className="btn btn-info btn-sm">Submit</button>
       </form>
     </div>
   );
