@@ -28,8 +28,8 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
   }, [toggleLogin]);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-primary">
-      <div className="container-md">
+    <nav className="navbar navbar-expand-lg bg-info">
+      <div className="container-fluid">
       <a className="navbar-brand" href="/"><h1>FridgeM8</h1></a>
         {!toggleLogin ? (
           <Link to={"/login"} className="navbar-text">

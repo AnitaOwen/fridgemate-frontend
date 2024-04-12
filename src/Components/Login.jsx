@@ -64,33 +64,38 @@ const Login = ({ setToggleLogin }) => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>Welcome!</h1>
-      <button onClick={handleDemoSignIn}>Demo User</button>
+      <h1 className="mt-4 mb-4">Welcome!</h1>
+      <button onClick={handleDemoSignIn} className="btn btn-dark mb-4">Demo User</button>
       <br />
       <br />
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">
-          <input
-            id="username"
-            value={user.username}
-            type="text"
-            placeholder="username"
-            autoComplete="username"
-            onChange={handleChange}
-          />
-        </label>
-
-        <label htmlFor="password">
-          <input
-            id="password"
-            value={user.password}
-            type="password"
-            placeholder="password"
-            onChange={handleChange}
-            autoComplete="current-password"
-          />
-        </label>
-        <button>Submit</button>
+        <div className="mb-3">
+          <label htmlFor="username" className="form-label">
+            <input
+              className="form-control"
+              id="username"
+              value={user.username}
+              type="text"
+              placeholder="username"
+              autoComplete="username"
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="password">
+            <input
+            className="form-control"
+              id="password"
+              value={user.password}
+              type="password"
+              placeholder="password"
+              onChange={handleChange}
+              autoComplete="current-password"
+            />
+          </label>
+        </div>
+        <button className="btn btn-info mb-4">Submit</button>
       </form>
       <p>
         No Account? <Link to="/register">Register</Link>

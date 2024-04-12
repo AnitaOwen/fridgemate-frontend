@@ -52,6 +52,7 @@ const FridgeNewForm = () => {
         />
         <br />
         <input type="submit" />
+        <Link to={`/dashboard`}>Cancel</Link>
       </form>
     </div>
   )
