@@ -20,7 +20,7 @@ const Fridge = ({ fridge, handleDeleteFridge }) => {
             </button>
           </div>
           <div className="col-sm-6">
-            <button className="btn btn-warning btn-sm btn-block" onClick={() => handleDeleteFridge(fridge.id)}>
+            <button className="btn btn-secondary btn-sm btn-block" onClick={() => handleDeleteFridge(fridge.id)}>
               Delete 
             </button>
           </div>
