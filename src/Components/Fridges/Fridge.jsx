@@ -15,12 +15,16 @@ const Fridge = ({ fridge, handleDeleteFridge }) => {
         <p className="card-text">{fridge.notes}</p>
         <div className="row">
           <div className="col-sm-6 mb-2">
-            <button className="btn btn-outline-dark btn-sm btn-block" onClick={handleEditFridge}>
+            <button 
+            className="btn btn-outline-info btn-sm btn-block mb-2" 
+            onClick={handleEditFridge}>
               Edit 
             </button>
           </div>
           <div className="col-sm-6">
-            <button className="btn btn-outline-dark btn-sm btn-block" onClick={() => handleDeleteFridge(fridge.id)}>
+            <button 
+            className="btn btn-outline-info btn-sm btn-block" 
+            onClick={() => handleDeleteFridge(fridge.id)}>
               Delete 
             </button>
           </div>
