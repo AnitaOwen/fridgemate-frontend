@@ -10,7 +10,7 @@ const ItemNewForm = () => {
     const [newItem, setNewItem] = useState({
         name: "",
         expiration_date: "",
-        amount_paid: 0,
+        amount_paid: "",
         category: ""
       })
 
@@ -51,40 +51,61 @@ const ItemNewForm = () => {
     }, [user.id, fridge_id]);
 
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
-            <input
-                id="name"
-                value={newItem.name}
-                type="text"
-                onChange={handleTextChange}
-                placeholder="Name of the item"
-                required
-            />
-            <label htmlFor="expiration_date">Expiration date:</label>
-            <input
-                id="expiration_date"
-                type="date"
-                value={newItem.expiration_date}
-                onChange={handleTextChange}
-            />
-            <label htmlFor="amount_paid">Amount paid: $</label>
-            <input
-                id="amount_paid"
-                type="number"
-                value={newItem.amount_paid}
-                onChange={handleTextChange}
-            />
-            <label htmlFor="category">Category:</label>
-            <select id="category" value={newItem.category} onChange={handleTextChange}>
-                <option value="">Select a category</option>
-                {categories.map(category => (
-                    <option key={category} value={category}>{category}</option>
-                ))}
-            </select>
-            <br />
-            <input type="submit" />
+    <div className="mt-5 center container-sm">
+        <h4 className="mb-5">Add a new item</h4>
+        <form onSubmit={handleSubmit} className="row justify-content-center">
+            <div className="col-lg-6 col-md-8 col-sm-10">
+                <div className="mb-3">
+                    <label htmlFor="name" className="form-label">Item name</label>
+                    <input
+                    className="form-control"
+                        id="name"
+                        value={newItem.name}
+                        type="text"
+                        onChange={handleTextChange}
+                        placeholder="Name of the item"
+                        required
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="expiration_date" className="form-label">Expiration date</label>
+                    <input
+                    className="form-control"
+                        id="expiration_date"
+                        type="date"
+                        value={newItem.expiration_date}
+                        onChange={handleTextChange}
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="amount_paid" className="form-label">Amount paid (in dollars) </label>
+                    <input
+                    className="form-control"
+                        id="amount_paid"
+                        type="number"
+                        value={newItem.amount_paid}
+                        onChange={handleTextChange}
+                        placeholder="0.00"
+                    />
+                </div>
+                <div className="mb-5">
+                    <label htmlFor="category" className="form-label">Category</label>
+                    <select id="category" value={newItem.category} onChange={handleTextChange} className="form-control">
+                        <option value="">Select a category</option>
+                        {categories.map(category => (
+                            <option key={category} value={category}>{category}</option>
+                        ))}
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button 
+                type="submit" 
+                className="btn btn-info btn-sm mb-3">Submit</button>
+            </div>
+            <div>
+                <Link to={`/dashboard`} className="btn btn-secondary btn-sm">Cancel</Link>
+            </div>
         </form>
     </div>
   )

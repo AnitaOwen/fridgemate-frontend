@@ -34,7 +34,7 @@ const FridgeNewForm = () => {
     <div className="mt-5 center container-sm">
       <h4 className="mb-5">Add a new fridge</h4>
       <form onSubmit={handleSubmit} className="row justify-content-center">
-        <div className="col-md-6">
+        <div className="col-lg-6 col-md-8 col-sm-10">
           <div className="mb-3">
             <label htmlFor="location" className="form-label">Name / Location:</label>
             <input
