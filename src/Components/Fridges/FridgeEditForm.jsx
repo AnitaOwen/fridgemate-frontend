@@ -40,7 +40,7 @@ const FridgeEditForm = () => {
       }, [fridge_id]);
 
   return (
-    <div className="mt-5 center container-sm">
+    <div className="mt-5 text-center container-sm">
       <h4 className="mb-5">Update fridge details</h4>
       <form onSubmit={handleSubmit} className="row justify-content-center">
         <div className="col-lg-6 col-md-8 col-sm-10">

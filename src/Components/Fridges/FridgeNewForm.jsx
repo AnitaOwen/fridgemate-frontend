@@ -31,7 +31,7 @@ const FridgeNewForm = () => {
             .catch((error) => console.error("Failed to create new fridge.", error));
     }
   return (
-    <div className="mt-5 center container-sm">
+    <div className="mt-5 text-center container-sm">
       <h4 className="mb-5">Add a new fridge</h4>
       <form onSubmit={handleSubmit} className="row justify-content-center">
         <div className="col-lg-6 col-md-8 col-sm-10">
