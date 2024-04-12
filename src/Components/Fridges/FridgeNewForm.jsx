@@ -36,31 +36,27 @@ const FridgeNewForm = () => {
       <form onSubmit={handleSubmit} className="row justify-content-center">
         <div className="col-md-6">
           <div className="mb-3">
-            <div>
-              <label htmlFor="location" className="form-label">Location:</label>
-            </div>
+            <label htmlFor="location" className="form-label">Name / Location:</label>
             <input
             className="form-control"
               id="location"
               value={newFridge.location}
               type="text"
               onChange={handleTextChange}
-              placeholder="fridge name or location"
+              placeholder="Enter fridge name or location here"
               required
             />
           </div>
           <div>
-            <div>
-              <label htmlFor="notes">Notes / description:</label>
-            </div>
+            <label htmlFor="notes" className="form-label">Notes / Comments:</label>
             <textarea 
             className="form-control"
-            // style={{ width: "60%"}}
             rows="3" cols="20"
               id="notes"
               type="text"
               value={newFridge.notes}
               onChange={handleTextChange}
+              placeholder="Enter notes or comments about the fridge here"
             />
           </div>
         </div>

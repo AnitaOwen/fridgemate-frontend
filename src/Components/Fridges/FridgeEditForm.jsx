@@ -40,29 +40,47 @@ const FridgeEditForm = () => {
       }, [fridge_id]);
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="location">Location:</label>
-        <input
-          id="location"
-          value={updatedFridge.location}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Name or location"
-          required
-        />
-        <label htmlFor="notes">Notes:</label>
-        <textarea
-          id="notes"
-          type="text"
-          placeholder="Enter notes here"
-          value={updatedFridge.notes}
-          onChange={handleTextChange}
-          rows={4}
-          cols={50}
-        />
-        <br />
-        <input type="submit" />
+    <div className="mt-5 center container-sm">
+      <h4 className="mb-5">Update fridge details</h4>
+      <form onSubmit={handleSubmit} className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="mb-3">
+            <label htmlFor="location" className="form-label">Name / Location:</label>
+            <input
+            className="form-control"
+              id="location"
+              value={updatedFridge.location}
+              type="text"
+              onChange={handleTextChange}
+              placeholder="Name or location"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="notes" className="form-label">Notes / Comments:</label>
+            <textarea
+            className="form-control"
+              id="notes"
+              type="text"
+              placeholder="Enter notes here"
+              value={updatedFridge.notes}
+              onChange={handleTextChange}
+              rows="3" cols="20"
+            />
+          </div>
+        </div>
+
+        <div>
+          <button 
+          type="submit" 
+          className="btn btn-info btn-sm mb-3 mt-4">
+            Submit</button>
+        </div>
+        <div>
+          <Link to={`/dashboard`} 
+          className="btn btn-secondary btn-sm"
+          >Cancel</Link>
+        </div>
       </form>
     </div>
   )
