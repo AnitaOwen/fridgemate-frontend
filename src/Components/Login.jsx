@@ -63,7 +63,7 @@ const Login = ({ setToggleLogin }) => {
   }
 
   return (
-    <div className="mt-5 container-sm center">
+    <div className="mt-5 container-sm text-center">
       <h2 className="mt-4 mb-4">Welcome!</h2>
       <button onClick={handleDemoSignIn} className="btn btn-dark btn-sm mb-4">Demo User</button>
       <h4 className="mt-4">Login</h4>
@@ -73,7 +73,7 @@ const Login = ({ setToggleLogin }) => {
             {/* <label htmlFor="username" className="form-label">
             </label> */}
             <input
-              className="form-control center"
+              className="form-control text-center"
               id="username"
               value={user.username}
               type="text"
@@ -86,7 +86,7 @@ const Login = ({ setToggleLogin }) => {
             {/* <label htmlFor="password" className="form-label" >
             </label> */}
             <input
-            className="form-control center"
+            className="form-control text-center"
               id="password"
               type="password"
               placeholder="password"

@@ -37,15 +37,15 @@ const FridgeIndex = () => {
     <div className="mt-5 container">
         <h2 className="text-center mb-4">All Fridges</h2>
         <div className="mb-4 text-center">
-            <Link to={`/fridges/new`} className="btn btn-info">Add new fridge</Link>
-        </div>
-        {/* <div className="row">
-          <div>
-            <Link to={`/fridges/new`} className="btn btn-info btn-block">Add new fridge</Link>
-          </div>
-        </div> */}
-        {/* <Link to={`/fridges/new`}>Add new fridge</Link> */}
-        
+            <Link to={`/fridges/new`}>
+              <button 
+              className="btn btn-info" 
+              type="button" 
+              style={{width:"200px"}}>
+                Add a new fridge
+              </button>
+            </Link>
+        </div>        
         <div className="row justify-content-center text-center">
           {fridges.map((fridge) => (
             <div key={fridge.id} className="col-md-6 mb-4">

@@ -14,18 +14,17 @@ const Fridge = ({ fridge, handleDeleteFridge }) => {
         <Link to={`/fridges/${fridge.id}`}><h3>{fridge.location}</h3></Link>
         <p className="card-text">{fridge.notes}</p>
         <div className="row">
-        <div className="col-sm-6 mb-2">
-            <button className="btn btn-secondary btn-sm btn-block" onClick={handleEditFridge}>
+          <div className="col-sm-6 mb-2">
+            <button className="btn btn-outline-dark btn-sm btn-block" onClick={handleEditFridge}>
               Edit 
             </button>
           </div>
           <div className="col-sm-6">
-            <button className="btn btn-secondary btn-sm btn-block" onClick={() => handleDeleteFridge(fridge.id)}>
+            <button className="btn btn-outline-dark btn-sm btn-block" onClick={() => handleDeleteFridge(fridge.id)}>
               Delete 
             </button>
           </div>
         </div>
-
       </div>
         {/* <button onClick={handleEditFridge}>EDIT</button>
         <button onClick={()=>handleDeleteFridge(fridge.id)}>DELETE</button> */}

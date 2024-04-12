@@ -45,7 +45,7 @@ const Register = ({ setToggleLogin }) => {
   // USE THIS FORM TO BUILD OUT YOUR FORM PROPERLY BY ADDING LABELS AND INPUTS AS WELL AS WHATEVER CSS FRAMEWORK YOU MAY USE OR VANILLA CSS. THIS IS JUST A BOILERPLATE CODE
 
   return (
-    <div className="mt-5 center container-sm">
+    <div className="mt-5 text-center container-sm">
       <p className="mb-4">
         Already have an account? <Link to="/login">Login</Link>
       </p>
@@ -56,7 +56,7 @@ const Register = ({ setToggleLogin }) => {
             {/* <label htmlFor="username" className="form-label">
             </label> */}
             <input
-            className="form-control center"
+            className="form-control text-center"
               id="username"
               value={user.username}
               type="text"
@@ -69,7 +69,7 @@ const Register = ({ setToggleLogin }) => {
             {/* <label htmlFor="email" className="form-label">
             </label> */}
             <input
-            className="form-control center"
+            className="form-control text-center"
               id="email"
               value={user.email}
               type="email"
@@ -82,7 +82,7 @@ const Register = ({ setToggleLogin }) => {
             {/* <label htmlFor="password" className="form-label">
             </label> */}
             <input
-            className="form-control center"
+            className="form-control text-center"
               id="password"
               value={user.password}
               type="password"
