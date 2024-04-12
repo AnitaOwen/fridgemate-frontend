@@ -104,7 +104,7 @@ const ItemNewForm = () => {
                 className="btn btn-info btn-sm mb-3">Submit</button>
             </div>
             <div>
-                <Link to={`/dashboard`} className="btn btn-secondary btn-sm">Cancel</Link>
+                <Link to={`/fridges/${fridge_id}`} className="btn btn-secondary btn-sm">Cancel</Link>
             </div>
         </form>
     </div>

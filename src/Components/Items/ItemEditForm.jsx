@@ -63,39 +63,57 @@ const ItemEditForm = () => {
     }, [user.id, fridge_id]);
 
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
-            <input
-                id="name"
-                value={updatedItem.name}
-                type="text"
-                onChange={handleTextChange}
-                placeholder="Name of the item"
-                required
-            />
-            <label htmlFor="expiration_date">Expiration date:</label>
-            <input
-                id="expiration_date"
-                type="date"
-                value={formatDate(updatedItem.expiration_date)}
-                onChange={handleTextChange}
-            />
-            <label htmlFor="amount_paid">Amount paid: $</label>
-            <input
-                id="amount_paid"
-                type="number"
-                value={updatedItem.amount_paid}
-                onChange={handleTextChange}
-            />
-            <label htmlFor="category">Category:</label>
-            <select id="category" value={updatedItem.category} onChange={handleTextChange}>
-                {categories.map(category => (
-                    <option key={category} value={category}>{category}</option>
-                ))}
-            </select>
-            <br />
-            <input type="submit" />
+    <div className="mt-5 center container-sm">
+        <h4 className="mb-5">Update item details</h4>
+        <form onSubmit={handleSubmit} className="row justify-content-center">
+        <div className="col-lg-6 col-md-8 col-sm-10">
+            <div className="mb-3">
+                <label htmlFor="name" className="form-label">Item name</label>
+                <input
+                className="form-control"
+                    id="name"
+                    value={updatedItem.name}
+                    type="text"
+                    onChange={handleTextChange}
+                    placeholder="Name of the item"
+                    required
+                />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="expiration_date" className="form-label">Expiration date</label>
+                <input
+                className="form-control"
+                    id="expiration_date"
+                    type="date"
+                    value={formatDate(updatedItem.expiration_date)}
+                    onChange={handleTextChange}
+                />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="amount_paid" className="form-label">Amount paid (in dollars)</label>
+                <input
+                className="form-control"
+                    id="amount_paid"
+                    type="number"
+                    value={updatedItem.amount_paid}
+                    onChange={handleTextChange}
+                />
+            </div>
+            <div className="mb-5">
+                <label htmlFor="category" className="form-label">Category</label>
+                <select id="category" value={updatedItem.category} onChange={handleTextChange} className="form-control">
+                    {categories.map(category => (
+                        <option key={category} value={category}>{category}</option>
+                    ))}
+                </select>
+            </div>
+        </div>
+        <div>
+            <button type="submit" className="btn btn-info btn-sm mb-3">Submit</button>
+        </div>
+        <div>
+            <Link to={`/fridges/${fridge_id}`} className="btn btn-secondary btn-sm">Cancel</Link>
+        </div>
         </form>  
     </div>
   )
