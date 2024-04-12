@@ -63,16 +63,17 @@ const Login = ({ setToggleLogin }) => {
   }
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="mt-5 container-sm center">
       <h2 className="mt-4 mb-4">Welcome!</h2>
-      <button onClick={handleDemoSignIn} className="btn btn-dark mb-4">Demo User</button>
-      <br />
-      <br />
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="username" className="form-label">
+      <button onClick={handleDemoSignIn} className="btn btn-dark btn-sm mb-4">Demo User</button>
+      <h4 className="mt-4">Login</h4>
+      <form onSubmit={handleSubmit} className="row justify-content-center">
+        <div className="col-md-6">
+          <div>
+            {/* <label htmlFor="username" className="form-label">
+            </label> */}
             <input
-              className="form-control"
+              className="form-control center"
               id="username"
               value={user.username}
               type="text"
@@ -80,22 +81,25 @@ const Login = ({ setToggleLogin }) => {
               autoComplete="username"
               onChange={handleChange}
             />
-          </label>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="password">
+          </div>
+          <div className="mb-3 mt-3">
+            {/* <label htmlFor="password" className="form-label" >
+            </label> */}
             <input
-            className="form-control"
+            className="form-control center"
               id="password"
-              value={user.password}
               type="password"
               placeholder="password"
               onChange={handleChange}
               autoComplete="current-password"
             />
-          </label>
+          </div>
         </div>
-        <button className="btn btn-info mb-4">Submit</button>
+        <div>
+          <button className="btn btn-info btn-sm mb-4">Submit</button>
+
+        </div>
+        
       </form>
       <h5>
         No Account? <Link to="/register">Register</Link>
