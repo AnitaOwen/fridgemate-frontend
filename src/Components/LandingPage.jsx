@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import Login from "./Login";
 function LandingPage({ toggleLogin }) {
   return (
-    <div style={{ textAlign: "center", marginTop: 75 }}>
-      <h1>Welcome!</h1>
+    <div className="mt-5" style={{ textAlign: "center"}}>
+      <h1 className="mb-4">Welcome!</h1>
       <img src="https://res.cloudinary.com/dveesfude/image/upload/v1712932028/giphy.webp_aujbo2.webp" alt="dancing fridge gif" />
 
       {toggleLogin ? (
@@ -13,7 +13,7 @@ function LandingPage({ toggleLogin }) {
         </>
       ) : (
         <>
-        <h4>Please  <Link to="/login">login</Link> or <Link to="/login">register</Link> to continue.</h4>
+        <h4 className="mt-4">Please  <Link to="/login">login</Link> or <Link to="/login">register</Link> to continue.</h4>
         </>
       )}
     </div>

@@ -64,7 +64,7 @@ const Login = ({ setToggleLogin }) => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h1 className="mt-4 mb-4">Welcome!</h1>
+      <h2 className="mt-4 mb-4">Welcome!</h2>
       <button onClick={handleDemoSignIn} className="btn btn-dark mb-4">Demo User</button>
       <br />
       <br />
@@ -97,9 +97,9 @@ const Login = ({ setToggleLogin }) => {
         </div>
         <button className="btn btn-info mb-4">Submit</button>
       </form>
-      <p>
+      <h5>
         No Account? <Link to="/register">Register</Link>
-      </p>
+      </h5>
     </div>
   );
 };

@@ -46,45 +46,51 @@ const Register = ({ setToggleLogin }) => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <p>
+      <p className="mt-5 mb-4">
         Already have an account? <Link to="/login">Login</Link>
       </p>
-      <h3>Register</h3>
+      <h3 className="mb-2">Register</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">
-          <input
-            id="username"
-            value={user.username}
-            type="text"
-            placeholder="username"
-            onChange={handleChange}
-            autoComplete="username"
-          />
-        </label>
-
-        <label htmlFor="email">
-          <input
-            id="email"
-            value={user.email}
-            type="email"
-            placeholder="email"
-            onChange={handleChange}
-            autoComplete="email"
-          />
-        </label>
-
-        <label htmlFor="password">
-          <input
-            id="password"
-            value={user.password}
-            type="password"
-            placeholder="password"
-            onChange={handleChange}
-            autoComplete="current-password"
-          />
-        </label>
-
-        <button>Submit</button>
+        <div className="mb-3">
+          <label htmlFor="username" className="form-label">
+            <input
+            className="form-control"
+              id="username"
+              value={user.username}
+              type="text"
+              placeholder="username"
+              onChange={handleChange}
+              autoComplete="username"
+            />
+          </label>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            <input
+            className="form-control"
+              id="email"
+              value={user.email}
+              type="email"
+              placeholder="email"
+              onChange={handleChange}
+              autoComplete="email"
+            />
+          </label>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label">
+            <input
+            className="form-control"
+              id="password"
+              value={user.password}
+              type="password"
+              placeholder="password"
+              onChange={handleChange}
+              autoComplete="current-password"
+            />
+          </label>
+        </div>
+        <button className="btn btn-info">Submit</button>
       </form>
     </div>
   );
