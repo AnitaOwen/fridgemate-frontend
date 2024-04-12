@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import Login from "./Login";
 function LandingPage({ toggleLogin }) {
   return (
-    <div style={{ textAlign: "center", marginTop: 100 }}>
+    <div style={{ textAlign: "center", marginTop: 75 }}>
       <h1>Welcome!</h1>
+      <img src="https://media4.giphy.com/media/XGj4Pywe7dkPpXE9SI/giphy.webp?cid=ecf05e47owjf47kjwol2ee7a4z55sbvqg04gj9dc9oki5ndh&ep=v1_gifs_related&rid=giphy.webp&ct=s" alt="" />
 
       {toggleLogin ? (
         <>
