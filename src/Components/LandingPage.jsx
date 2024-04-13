@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+
 import Login from "./Login";
 function LandingPage({ toggleLogin }) {
   return (
-    <div className="mt-5" style={{ textAlign: "center"}}>
+    <div className="mt-5 text-center">
       <h1 className="mb-4">Welcome!</h1>
       <img src="https://res.cloudinary.com/dveesfude/image/upload/v1712932028/giphy.webp_aujbo2.webp" alt="dancing fridge gif" />
 

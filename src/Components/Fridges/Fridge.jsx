@@ -1,5 +1,4 @@
-import { useNavigate, Link, } from "react-router-dom"
-const URL = import.meta.env.VITE_BASE_URL;
+import { useNavigate, Link } from "react-router-dom"
 
 const Fridge = ({ fridge, handleDeleteFridge }) => {
   const navigate = useNavigate()

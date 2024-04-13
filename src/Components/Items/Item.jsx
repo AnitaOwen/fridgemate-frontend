@@ -18,14 +18,12 @@ const Item = ({ item, fridge_id, handleDeleteItem }) => {
   return (
     <>
     {/* <td>{item.category}</td> */}
-    <td>{item.name}</td>
-    <td>${item.amount_paid}</td>
-    <td>
-        <p 
-        className={isExpired(item.expiration_date) ? "expired" : ""}>
-            {formatDate(item.expiration_date)}
-        </p>
-    </td>
+    <td><p className={isExpired(item.expiration_date) ? "expired" : ""}>{item.name}</p></td>
+    
+    <td><p className={isExpired(item.expiration_date) ? "expired" : ""}>{formatDate(item.expiration_date)}</p></td>
+
+    <td><p className={isExpired(item.expiration_date) ? "expired" : ""}>${item.amount_paid}</p></td>
+    
     <td>
         <button 
         onClick={handleEditItem} 
@@ -33,6 +31,7 @@ const Item = ({ item, fridge_id, handleDeleteItem }) => {
             Edit
         </button>
     </td>
+
     <td>
         <button 
         onClick={()=>handleDeleteItem(item.id)}
@@ -40,6 +39,7 @@ const Item = ({ item, fridge_id, handleDeleteItem }) => {
             Delete
         </button>
     </td>
+    
     </>
   )
 }

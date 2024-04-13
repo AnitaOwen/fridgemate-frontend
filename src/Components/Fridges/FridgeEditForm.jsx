@@ -28,15 +28,21 @@ const FridgeEditForm = () => {
                 "Content-Type": "application/json",
             },
           })
-            .then(() => navigate(`/dashboard`))
+            .then(() => navigate(`/fridges`))
             .catch((error) => console.error("Failed to update fridge", error));
     }
 
     useEffect(() => {
-        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}`)
-          .then((res) => res.json())
-          .then((data) => setUpdatedFridge(data))
-          .catch((error) => console.error(error))
+      const token = localStorage.getItem("token")
+      fetch(`${URL}/api/fridges/${user.id}/${fridge_id}`,{
+        headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json"
+          }
+      })
+        .then((res) => res.json())
+        .then((data) => setUpdatedFridge(data))
+        .catch((error) => console.error(error))
       }, [fridge_id]);
 
   return (
@@ -77,7 +83,7 @@ const FridgeEditForm = () => {
             Submit</button>
         </div>
         <div>
-          <Link to={`/dashboard`} 
+          <Link to={`/fridges`} 
           className="btn btn-secondary btn-sm"
           >Cancel</Link>
         </div>

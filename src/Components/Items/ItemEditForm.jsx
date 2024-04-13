@@ -25,7 +25,7 @@ const ItemEditForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem("token")
         // http://localhost:3003/api/fridges/1/2/items/13
         fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/${item_id}`, {
             method: "PUT",
@@ -41,8 +41,13 @@ const ItemEditForm = () => {
 
     // fetch single item details.
     useEffect(() => {
+        const token = localStorage.getItem("token")
         // http://localhost:3003/api/fridges/1/2/items/13
-        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/${item_id}`)
+        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/${item_id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
           .then((res) => res.json())
           .then((data) => setUpdatedItem(data.item))
           .catch((error) => console.error(error))
@@ -51,11 +56,9 @@ const ItemEditForm = () => {
     // fetch categories
     useEffect(() => {
         const token = localStorage.getItem("token");
-        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/categories`,
-        {
+        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/categories/all`,{
             headers: {
                 Authorization: `Bearer ${token}`,
-                "Content-Type": "application/json"
               }
         })
           .then((res) => res.json())

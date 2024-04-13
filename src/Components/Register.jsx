@@ -34,15 +34,13 @@ const Register = ({ setToggleLogin }) => {
         localStorage.removeItem("token");
         // set the new user's JWT token in the browser
         localStorage.setItem("token", data.token);
-        setToggleLogin(true);
+        await setToggleLogin(true);
         navigate("/fridges");
       }
     } catch (error) {
       console.error("Error during registration:", error);
     }
   }
-
-  // USE THIS FORM TO BUILD OUT YOUR FORM PROPERLY BY ADDING LABELS AND INPUTS AS WELL AS WHATEVER CSS FRAMEWORK YOU MAY USE OR VANILLA CSS. THIS IS JUST A BOILERPLATE CODE
 
   return (
     <div className="mt-5 text-center container-sm">

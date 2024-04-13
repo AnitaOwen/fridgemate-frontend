@@ -27,7 +27,7 @@ const FridgeNewForm = () => {
                 "Content-Type": "application/json",
             },
           })
-            .then(() => navigate(`/dashboard`))
+            .then(() => navigate(`/fridges`))
             .catch((error) => console.error("Failed to create new fridge.", error));
     }
   return (
@@ -67,7 +67,7 @@ const FridgeNewForm = () => {
             Submit</button>
         </div>
         <div>
-          <Link to={`/dashboard`} 
+          <Link to={`/fridges`} 
           className="btn btn-secondary btn-sm"
           >Cancel</Link>
 

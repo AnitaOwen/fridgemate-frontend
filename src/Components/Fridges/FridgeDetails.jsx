@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link} from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import ItemIndex from "../Items/ItemIndex";
 const URL = import.meta.env.VITE_BASE_URL;
@@ -11,12 +11,11 @@ const FridgeDetails = ({ items, setItems }) => {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}`,
-        {
+        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}`,{
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json"
-              }
+            }
         })
           .then((res) => res.json())
           .then((data) => setFridge(data));
@@ -24,14 +23,16 @@ const FridgeDetails = ({ items, setItems }) => {
 
   return (
     <div className="container">
-        <Link to={"/fridges"}>Back to All Fridges</Link>
-        <div className="mt-4 card mb-3">
+        <div className="mt-3">
+            <Link to={"/fridges"}> ⬅ Back to All Fridges</Link>
+        </div>
+        <div className="mt- card mb-3">
             <div className="card-body">
                 {fridge && (
                     <section className="text-center">
                         <h2 className="card-title">{fridge.location}</h2>
                         <p className="card-text">{fridge.notes}</p>
-                        <h5>{items.length} total items</h5>
+                        <h5>{items.length} {items.length === 1 ? " total item" : "total items"}</h5>
                         <Link to={`/fridges/${fridge_id}/items/new`}>
                             <button className="btn btn-info btn-sm">Add an item</button>
                         </Link>

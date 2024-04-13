@@ -27,7 +27,12 @@ const FridgeIndex = ({ items }) => {
   }
 
   useEffect(() => {
-    fetch(`${URL}/api/fridges/${user.id}`)
+    const token = localStorage.getItem("token")
+    fetch(`${URL}/api/fridges/${user.id}`,{
+      headers: {
+          Authorization: `Bearer ${token}`,
+        }
+    })
       .then((res) => res.json())
       .then((data) => setFridges(data))
       .catch((error) => console.error(error));

@@ -14,8 +14,6 @@ const ItemNewForm = () => {
         category: ""
       })
 
-    
-
     const handleTextChange = (event) => {
         setNewItem({ ...newItem, [event.target.id]: event.target.value });
     }
@@ -31,18 +29,17 @@ const ItemNewForm = () => {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
             },
-          })
+        })
             .then(() => navigate(`/fridges/${fridge_id}`))
             .catch((error) => console.error("Failed to create new item.", error));
     }
 
+    // fetch categories
     useEffect(() => {
         const token = localStorage.getItem("token");
-        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/categories/all`,
-        {
+        fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/categories/all`,{
             headers: {
-                Authorization: `Bearer ${token}`,
-                "Content-Type": "application/json"
+                Authorization: `Bearer ${token}`
               }
         })
           .then((res) => res.json())
