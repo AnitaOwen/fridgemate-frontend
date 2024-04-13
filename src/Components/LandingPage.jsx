@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-import Login from "./Login";
 function LandingPage({ toggleLogin }) {
   return (
     <div className="mt-5 text-center">

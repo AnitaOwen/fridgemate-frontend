@@ -90,6 +90,7 @@ const ItemEditForm = () => {
                     type="date"
                     value={formatDate(updatedItem.expiration_date)}
                     onChange={handleTextChange}
+                    required
                 />
             </div>
             <div className="mb-3">
@@ -100,11 +101,12 @@ const ItemEditForm = () => {
                     type="number"
                     value={updatedItem.amount_paid}
                     onChange={handleTextChange}
+                    required
                 />
             </div>
             <div className="mb-5">
                 <label htmlFor="category" className="form-label">Category</label>
-                <select id="category" value={updatedItem.category} onChange={handleTextChange} className="form-control">
+                <select id="category" value={updatedItem.category} onChange={handleTextChange} className="form-control" required>
                     {categories.map(category => (
                         <option key={category} value={category}>{category}</option>
                     ))}

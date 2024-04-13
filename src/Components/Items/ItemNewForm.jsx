@@ -14,6 +14,8 @@ const ItemNewForm = () => {
         category: ""
       })
 
+    
+
     const handleTextChange = (event) => {
         setNewItem({ ...newItem, [event.target.id]: event.target.value });
     }
@@ -34,12 +36,12 @@ const ItemNewForm = () => {
             .catch((error) => console.error("Failed to create new item.", error));
     }
 
-    // fetch categories
     useEffect(() => {
         const token = localStorage.getItem("token");
         fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items/categories/all`,{
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json"
               }
         })
           .then((res) => res.json())
@@ -72,6 +74,7 @@ const ItemNewForm = () => {
                         type="date"
                         value={newItem.expiration_date}
                         onChange={handleTextChange}
+                        required
                     />
                 </div>
                 <div className="mb-3">
@@ -83,11 +86,12 @@ const ItemNewForm = () => {
                         value={newItem.amount_paid}
                         onChange={handleTextChange}
                         placeholder="0.00"
+                        required
                     />
                 </div>
                 <div className="mb-5">
                     <label htmlFor="category" className="form-label">Category</label>
-                    <select id="category" value={newItem.category} onChange={handleTextChange} className="form-control">
+                    <select id="category" value={newItem.category} onChange={handleTextChange} className="form-control" required>
                         <option value="">Select a category</option>
                         {categories.map(category => (
                             <option key={category} value={category}>{category}</option>
