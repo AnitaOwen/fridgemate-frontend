@@ -1,7 +1,7 @@
 
 import FridgeIndex from "../Components/Fridges/FridgeIndex"
 
-const Index = () => {
+const Index = ({}) => {
   return (
     <div>
       <FridgeIndex />

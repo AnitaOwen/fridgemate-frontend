@@ -68,6 +68,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
             </>      
         ) : (
             <>
+            <h5>{items.length} total items</h5>
             {sortByDate(items).map((item) => (
                 <Item key={item.id} item={item} fridge_id={fridge_id} handleDeleteItem={handleDeleteItem}/>
             ))}

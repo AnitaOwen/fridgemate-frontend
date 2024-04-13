@@ -3,7 +3,7 @@ import { Link, useOutletContext } from "react-router-dom";
 import Fridge from "./Fridge";
 const URL = import.meta.env.VITE_BASE_URL;
 
-const FridgeIndex = () => {
+const FridgeIndex = ({ items }) => {
   const { user } = useOutletContext()
   const [fridges, setFridges] = useState([])
 
@@ -49,6 +49,7 @@ const FridgeIndex = () => {
           {fridges.map((fridge) => (
             <div key={fridge.id} className="col-md-6 mb-4">
               <Fridge
+              items={items}
               fridge={fridge} 
               handleDeleteFridge={handleDeleteFridge}/>
             </div>

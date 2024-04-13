@@ -30,8 +30,6 @@ const Fridge = ({ fridge, handleDeleteFridge }) => {
           </div>
         </div>
       </div>
-        {/* <button onClick={handleEditFridge}>EDIT</button>
-        <button onClick={()=>handleDeleteFridge(fridge.id)}>DELETE</button> */}
     </div>
   )
 }
