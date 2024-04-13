@@ -25,23 +25,21 @@ const FridgeDetails = ({ items, setItems }) => {
   return (
     <div className="container">
         <Link to={"/fridges"}>Back to All Fridges</Link>
-        <div className="row mt-4">
-            <div className="col">
+        <div className="mt-4 card mb-3">
+            <div className="card-body">
                 {fridge && (
                     <section className="text-center">
-                        <h2>{fridge.location}</h2>
-                        <p>{fridge.notes}</p>
+                        <h2 className="card-title">{fridge.location}</h2>
+                        <p className="card-text">{fridge.notes}</p>
                         <h5>{items.length} total items</h5>
                         <Link to={`/fridges/${fridge_id}/items/new`}>
-                            <button>Add an item to this fridge</button>
+                            <button className="btn btn-info btn-sm">Add an item</button>
                         </Link>
                     </section>
                 )}
             </div>
         </div>
-        <div className="mt-4">
-            <ItemIndex fridge_id={fridge_id} items={items} setItems={setItems} />
-        </div>
+        <ItemIndex fridge_id={fridge_id} items={items} setItems={setItems} />
     </div>
   )
 }
