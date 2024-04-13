@@ -23,17 +23,25 @@ const FridgeDetails = ({ items, setItems }) => {
       }, [fridge_id]);
 
   return (
-    <div>
-        {fridge && (
-            <section>
-                <h3>{fridge.location}</h3>
-                <p>{fridge.notes}</p>
-            </section>
-        )}
-        {items.length > 0 && (
-            <Link to={`/fridges/${fridge_id}/items/new`}>Add an item to this fridge</Link>
-        )}
-        <ItemIndex fridge_id={fridge_id} items={items} setItems={setItems} />
+    <div className="container">
+        <Link to={"/dashboard"}>Back to All Fridges</Link>
+        <div className="row mt-4">
+            <div className="col">
+                {fridge && (
+                    <section className="text-center">
+                        <h2>{fridge.location}</h2>
+                        <p>{fridge.notes}</p>
+                        <h5>{items.length} total items</h5>
+                        <Link to={`/fridges/${fridge_id}/items/new`}>
+                            <button>Add an item to this fridge</button>
+                        </Link>
+                    </section>
+                )}
+            </div>
+        </div>
+        <div className="mt-4">
+            <ItemIndex fridge_id={fridge_id} items={items} setItems={setItems} />
+        </div>
     </div>
   )
 }

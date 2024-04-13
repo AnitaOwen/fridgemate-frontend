@@ -16,10 +16,9 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
         return items.sort((itemA, itemB) => {
           const dateA = formatDate(itemA);
           const dateB = formatDate(itemB);
-          console.log("dateA", dateA)
-          if (dateA[2] !== dateB[2]) return dateA[2] - dateB[2];
-          if (dateA[0] !== dateB[0]) return dateA[0] - dateB[0];
-          if (dateA[1] !== dateB[1]) return dateA[1] - dateB[1];
+          if (dateA[2] !== dateB[2]) return dateA[2] - dateB[2]
+          if (dateA[0] !== dateB[0]) return dateA[0] - dateB[0]
+          if (dateA[1] !== dateB[1]) return dateA[1] - dateB[1]
           return +itemB.id - +itemA.id;
         })
     }
@@ -59,21 +58,9 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
     }, [fridge_id])
   return (
     <div>
-        {items.length === 0 ? (
-            <>
-                <p>This fridge is empty! </p>
-                <Link to={`/fridges/${fridge_id}/items/new`}>
-                    <p>Add an item to this fridge.</p>
-                </Link> 
-            </>      
-        ) : (
-            <>
-            <h5>{items.length} total items</h5>
-            {sortByDate(items).map((item) => (
-                <Item key={item.id} item={item} fridge_id={fridge_id} handleDeleteItem={handleDeleteItem}/>
-            ))}
-            </>
-        )}
+        {sortByDate(items).map((item) => (
+            <Item key={item.id} item={item} fridge_id={fridge_id} handleDeleteItem={handleDeleteItem}/>
+        ))}
     </div>
   )
 }
