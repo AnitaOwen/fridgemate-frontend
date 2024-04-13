@@ -48,7 +48,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           {/* Place protected routes here */}
           <Route
-            path="/dashboard"
+            path="/fridges"
             element={<Index handleLogout={handleLogout} />}
           />
           <Route
