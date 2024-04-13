@@ -9,12 +9,10 @@ function LandingPage({ toggleLogin }) {
       {toggleLogin ? (
         <>
         <h4>You are already logged in!</h4>
-        <Link to="/dashboard">Go to My Fridges</Link>
+        <Link to="/fridges">Go to My Fridges</Link>
         </>
       ) : (
-        <>
-        <h4 className="mt-4">Please  <Link to="/login">login</Link> or <Link to="/register">register</Link> to continue.</h4>
-        </>
+        <h3 className="mt-4">Please  <Link to="/login">login</Link> or <Link to="/register">register</Link> to continue.</h3>
       )}
     </div>
   );

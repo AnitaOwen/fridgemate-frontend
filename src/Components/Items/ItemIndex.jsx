@@ -58,28 +58,30 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
     }, [fridge_id])
   return (
     <div className="mt-4">
-        <table className="table table-striped">
-            <thead>
-                <tr>
-                    {/* <th>Category</th> */}
-                    <th>Item Name</th>
-                    <th>Amount Paid</th>
-                    <th>Expiration Date</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {sortByDate(items).map((item) => (
-                    <tr key={item.id}>
-                        <Item 
-                        item={item} 
-                        fridge_id={fridge_id} 
-                        handleDeleteItem={handleDeleteItem}/>
+        {items.length > 0 && (
+            <table className="table table-striped">
+                <thead>
+                    <tr>
+                        {/* <th>Category</th> */}
+                        <th>Item Name</th>
+                        <th>Amount Paid</th>
+                        <th>Expiration Date</th>
+                        <th></th>
+                        <th></th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {sortByDate(items).map((item) => (
+                        <tr key={item.id}>
+                            <Item 
+                            item={item} 
+                            fridge_id={fridge_id} 
+                            handleDeleteItem={handleDeleteItem}/>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        )}
     </div>
   )
 }
