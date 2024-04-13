@@ -11,3 +11,14 @@ textarea{
 .btn{
   width: 140px;
 }
+
+.edit{
+  width: 40px
+}
+
+.delete{
+  width: 55px
+}
+.expired{
+  color: rgb(202, 0, 0);
+}

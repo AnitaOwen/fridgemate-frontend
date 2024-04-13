@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 const Item = ({ item, fridge_id, handleDeleteItem }) => { 
     const navigate = useNavigate()
@@ -7,17 +7,39 @@ const Item = ({ item, fridge_id, handleDeleteItem }) => {
         const date = new Date(dateString);
         return date.toLocaleDateString();
     }
+
+    const isExpired = (expirationDate) => {
+        return expirationDate && new Date(expirationDate) < new Date()
+      }
+
     const handleEditItem = () => {
         navigate(`/fridges/${fridge_id}/items/${item.id}/edit`)
     }
   return (
     <>
-    <td>{item.category}</td>
+    {/* <td>{item.category}</td> */}
     <td>{item.name}</td>
     <td>${item.amount_paid}</td>
-    <td>{formatDate(item.expiration_date)}</td>
-    <td><button onClick={handleEditItem}>EDIT</button></td>
-    <td><button onClick={()=>handleDeleteItem(item.id)}>DELETE</button></td>
+    <td>
+        <p 
+        className={isExpired(item.expiration_date) ? "expired" : ""}>
+            {formatDate(item.expiration_date)}
+        </p>
+    </td>
+    <td>
+        <button 
+        onClick={handleEditItem} 
+        className="btn btn-outline-info btn-sm edit">
+            Edit
+        </button>
+    </td>
+    <td>
+        <button 
+        onClick={()=>handleDeleteItem(item.id)}
+        className="btn btn-outline-info btn-sm delete">
+            Delete
+        </button>
+    </td>
     </>
   )
 }
