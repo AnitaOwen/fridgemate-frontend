@@ -12,15 +12,12 @@ const Item = ({ item, fridge_id, handleDeleteItem }) => {
     }
   return (
     <>
-    <div>
-        <h5>{item.name} <span>[{item.category}]</span></h5>
-        <p><span>expiration:</span> {formatDate(item.expiration_date)}</p>
-        <p><span>amount paid:</span> ${item.amount_paid}</p>
-    </div>
-    <div>
-        <button onClick={handleEditItem}>EDIT</button>
-        <button onClick={()=>handleDeleteItem(item.id)}>DELETE</button>
-    </div>
+    <td>{item.category}</td>
+    <td>{item.name}</td>
+    <td>${item.amount_paid}</td>
+    <td>{formatDate(item.expiration_date)}</td>
+    <td><button onClick={handleEditItem}>EDIT</button></td>
+    <td><button onClick={()=>handleDeleteItem(item.id)}>DELETE</button></td>
     </>
   )
 }
