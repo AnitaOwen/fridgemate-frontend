@@ -8,7 +8,6 @@ const FridgeDetails = ({ items, setItems }) => {
     const { user } = useOutletContext()
     const [fridge, setFridge] = useState({})
     const { fridge_id } = useParams();
-    // console.log(user.id)
 
     useEffect(() => {
         const token = localStorage.getItem("token");
