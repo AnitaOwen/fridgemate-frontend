@@ -23,7 +23,7 @@ function App() {
 
     await setToggleLogin(false);
 
-    navigate("/login");
+    navigate("/");
   }
 
   return (
