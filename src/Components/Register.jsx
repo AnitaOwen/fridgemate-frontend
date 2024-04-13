@@ -35,7 +35,7 @@ const Register = ({ setToggleLogin }) => {
         // set the new user's JWT token in the browser
         localStorage.setItem("token", data.token);
         setToggleLogin(true);
-        navigate("/dashboard");
+        navigate("/fridges");
       }
     } catch (error) {
       console.error("Error during registration:", error);

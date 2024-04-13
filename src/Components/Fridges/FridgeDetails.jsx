@@ -24,7 +24,7 @@ const FridgeDetails = ({ items, setItems }) => {
 
   return (
     <div className="container">
-        <Link to={"/dashboard"}>Back to All Fridges</Link>
+        <Link to={"/fridges"}>Back to All Fridges</Link>
         <div className="row mt-4">
             <div className="col">
                 {fridge && (
