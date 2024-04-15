@@ -89,6 +89,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
           {
             backgroundColor: chartColors,
             hoverBackgroundColor: chartColors,
+            maxBarThickness: 80,
             data: formattedTotals,
           },
         ],
@@ -99,7 +100,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
 
   return (
     <div className="mt-4">
-      {chartData && <BarChart data={chartData} />}
+      <div className="text-center">{chartData && <BarChart data={chartData} />}</div>
         {items.length > 0 && (
           <table className="table table-striped">
                 <thead>
