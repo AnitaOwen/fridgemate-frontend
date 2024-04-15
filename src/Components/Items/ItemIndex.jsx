@@ -20,7 +20,6 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
   ]
   const totalCostOfAllItems = items.reduce((acc, current) => acc += +current.amount_paid, 0)
 
-  
   const formatDate = (item) => {
       const date = new Date(item.expiration_date)
       // 4/20/2024 => [4, 20, 2025]
@@ -88,6 +87,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
         labels: categories,
         datasets: [
           {
+            label: "Amount Spent For Each Item Category In Dollars",
             backgroundColor: chartColors,
             hoverBackgroundColor: chartColors,
             maxBarThickness: 80,

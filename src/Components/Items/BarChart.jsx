@@ -14,9 +14,8 @@ const BarChart = ({data, totalCostOfAllItems}) => {
     {isVisible && data ? (
         <div className='card'>
             <div className="card-body">
-                <p>Total spent for each item category in Dollars</p>
                 <Bar data={data}/>
-                <p className="mt-3">Total spent for all items in this fridge: ${totalCostOfAllItems.toFixed(2)} </p>
+                <p className="mt-3">Total spent for all items in this fridge: <span className="bold">${totalCostOfAllItems.toFixed(2)}</span> </p>
             </div>
         </div>
       ) : null
