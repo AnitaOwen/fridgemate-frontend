@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import Item from "./Item";
 import BarChart from "./BarChart";
-import DoughnutChart from "./DoughnutChart";
 import Chart from 'chart.js/auto'
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -20,7 +19,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
     '#FFD700', // Gold
   ]
   const totalCostOfAllItems = items.reduce((acc, current) => acc += +current.amount_paid, 0)
-  console.log(totalCostOfAllItems)
+
   
   const formatDate = (item) => {
       const date = new Date(item.expiration_date)
