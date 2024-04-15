@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Ojuju:wght@200..800&family=Satisfy&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat Alternates";
+  font-family: "Jura";
 }
 textarea{
   padding: 5px;
@@ -21,4 +23,7 @@ textarea{
 }
 .expired{
   color: rgb(202, 0, 0);
+}
+.logo{
+  font-family: "Satisfy";
 }
