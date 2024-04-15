@@ -7,7 +7,7 @@ const URL = import.meta.env.VITE_BASE_URL;
 const FridgeDetails = ({ items, setItems }) => {
     const { user } = useOutletContext()
     const [fridge, setFridge] = useState({})
-    const { fridge_id } = useParams();
+    const { fridge_id } = useParams()
 
     useEffect(() => {
         const token = localStorage.getItem("token");
