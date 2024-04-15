@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Bar } from 'react-chartjs-2';
 
-const BarChart = ({data}) => {
+const BarChart = ({data, totalCostOfAllItems}) => {
     const [isVisible, setIsVisible] = useState(false)
 
     const toggleChart = () => {
@@ -14,7 +14,9 @@ const BarChart = ({data}) => {
     {isVisible && data ? (
         <div className='card'>
             <div className="card-body">
+                <p>Total expense for each item category in Dollars</p>
                 <Bar data={data}/>
+                <p>Total expense for all items in this fridge: ${totalCostOfAllItems.toFixed(2)} </p>
             </div>
         </div>
       ) : null

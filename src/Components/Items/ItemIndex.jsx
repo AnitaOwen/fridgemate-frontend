@@ -19,6 +19,8 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
     '#FF6347', // Tomato
     '#FFD700', // Gold
   ]
+  const totalCostOfAllItems = items.reduce((acc, current) => acc += +current.amount_paid, 0)
+  console.log(totalCostOfAllItems)
   
   const formatDate = (item) => {
       const date = new Date(item.expiration_date)
@@ -100,7 +102,10 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
 
   return (
     <div className="mt-4">
-      <div className="text-center">{chartData && <BarChart data={chartData} />}</div>
+      <div className="text-center">
+        {chartData && 
+          <BarChart data={chartData} totalCostOfAllItems={totalCostOfAllItems} />}
+      </div>
         {items.length > 0 && (
           <table className="table table-striped">
                 <thead>
