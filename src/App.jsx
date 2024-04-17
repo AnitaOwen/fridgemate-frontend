@@ -13,6 +13,7 @@ import AddItem from "./Pages/AddItem";
 import UpdateItem from "./Pages/UpdateItem";
 import Home from "./Pages/Home";
 import FourOFour from "./Components/FourOFour";
+import About from "./Pages/About";
 
 function App() {
   const navigate = useNavigate();
@@ -45,6 +46,7 @@ function App() {
           path="/register"
           element={<Register setToggleLogin={setToggleLogin} />}
         />
+        <Route path="/about" element={<About />} />
 
         <Route element={<ProtectedRoute />}>
           {/* Place protected routes here */}
