@@ -12,9 +12,16 @@ const AboutMe = () => {
           <p className="card-text">Feel free to reach out if you have any questions or suggestions!</p>
           <Link to="https://github.com/AnitaOwen" target="_blank">Visit my GitHub
           </Link>
-
         </div>
       </div>
+      <div className="text-center mt-3">
+          <Link to="/">
+            <button className="btn btn-outline-info btn-sm m-4">Home</button>
+          </Link>
+          <Link to="/fridges">
+            <button className="btn btn-outline-info btn-sm m-4">All Fridges</button>
+          </Link>
+        </div>
 
     </div>
   )
