@@ -12,7 +12,7 @@ const BarChart = ({data, totalCostOfAllItems}) => {
     <>
     <button className="btn btn-outline-info btn-sm mb-3" onClick={toggleChart}>{isVisible ? 'Hide Chart' : 'Show Chart'}</button>
     {isVisible && data ? (
-        <div className='card'>
+        <div className='card mb-2'>
             <div className="card-body">
                 <Bar data={data}/>
                 <p className="mt-3">Total spent for all items in this fridge: <span className="bold">${totalCostOfAllItems.toFixed(2)}</span> </p>

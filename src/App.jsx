@@ -12,6 +12,7 @@ import Index from "./Pages/Index";
 import AddItem from "./Pages/AddItem";
 import UpdateItem from "./Pages/UpdateItem";
 import Home from "./Pages/Home";
+import FourOFour from "./Components/FourOFour";
 
 function App() {
   const navigate = useNavigate();
@@ -72,6 +73,7 @@ function App() {
             element={<UpdateItem />}
           />
         </Route>
+        <Route path="*" element={<FourOFour />} />
         
       </Routes>
     </>
