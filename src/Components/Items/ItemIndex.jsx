@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import Item from "./Item";
 import BarChart from "./BarChart";
-import Chart from 'chart.js/auto'
 const URL = import.meta.env.VITE_BASE_URL;
 
 const ItemIndex = ({ fridge_id, items, setItems }) => {
