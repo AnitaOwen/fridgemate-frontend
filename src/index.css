@@ -26,6 +26,11 @@ textarea{
 }
 .logo{
   font-family: "Satisfy";
+  font-size: 40px
+}
+.text-logo{
+  font-family: "Satisfy";
+  font-size: 22px  
 }
 .bold{
   font-weight: 800;

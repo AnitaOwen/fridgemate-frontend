@@ -28,15 +28,18 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
   return (
     <nav className="navbar navbar-expand-lg bg-info">
       <div className="container-md">
-      <a className="navbar-brand" href="/"><h1 className="logo">FridgeM8</h1></a>
+      {/* <a className="navbar-brand" href="/"><h1 className="logo">FridgeM8</h1></a> */}
+      <Link to="/" className="navbar-brand" >
+          <h1 className="nav-link logo">FridgeM8</h1>
+        </Link>
         {!toggleLogin ? (
-          <Link to={"/login"} className="navbar-text">
+          <Link to={"/login"} className="nav-link">
             <h4>Login</h4>
           </Link>
         ) : (
           <h4 className="navbar-text">
-            {user && <span>Hello, {user.username.toUpperCase()} | </span>}
-            <Link onClick={handleLogout}>
+            {user && <span>Hello, {user.username.toUpperCase()}</span>}
+            <Link onClick={handleLogout} className="nav-link text-center">
               <span>Logout</span>
             </Link>
           </h4>

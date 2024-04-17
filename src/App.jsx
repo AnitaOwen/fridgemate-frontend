@@ -14,6 +14,7 @@ import UpdateItem from "./Pages/UpdateItem";
 import Home from "./Pages/Home";
 import FourOFour from "./Components/FourOFour";
 import About from "./Pages/About";
+import Footer from "./Components/Footer";
 
 function App() {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ function App() {
         toggleLogin={toggleLogin}
         setToggleLogin={setToggleLogin}
       />
+      <Footer />
 
       <Routes>
         <Route path="/" element={<Home toggleLogin={toggleLogin}/>} />
