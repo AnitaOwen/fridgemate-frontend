@@ -7,6 +7,7 @@ const URL = import.meta.env.VITE_BASE_URL;
 
 const ItemIndex = ({ fridge_id, items, setItems }) => {
   const [chartData, setChartData] = useState(null)
+  const [itemCategories, setItemCategories] = useState([])
   const { user } = useOutletContext()
   const chartColors = [
     '#BA55D3', // Medium Orchid
@@ -55,35 +56,6 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
       .catch((error) => console.error(error))
     }
   }
-  const calculateChartData = (items) => {
-    if (items.length > 0) {
-      const categoryTotals = items.reduce((acc, current) => {
-        if (!acc[current.category]) {
-          acc[current.category] = +current.amount_paid;
-        } else {
-          acc[current.category] += +current.amount_paid;
-        }
-        return acc;
-      }, {})
-
-      const categories = Object.keys(categoryTotals)
-      const totals = Object.values(categoryTotals)
-      const formattedTotals = totals.map((total) => +total.toFixed(2))
-
-      return {
-        labels: categories,
-        datasets: [
-          {
-            label: "Amount Spent For Each Item Category In Dollars",
-            data: formattedTotals,
-            backgroundColor: chartColors,
-            hoverBackgroundColor: chartColors,
-            maxBarThickness: 80,
-          },
-        ],
-      }
-    }
-  }
 
   useEffect(() => {
     const token = localStorage.getItem("token")
@@ -97,15 +69,42 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
   }, [fridge_id])
 
   useEffect(() => {
-    const newChartData = calculateChartData(items)
-    setChartData(newChartData)
+    if (items.length > 0) {
+      const categoryTotals = items.reduce((acc, current) => {
+        if (!acc[current.category]) {
+          acc[current.category] = +current.amount_paid;
+        } else {
+          acc[current.category] += +current.amount_paid;
+        }
+        return acc;
+      }, {})
+
+      const categories = Object.keys(categoryTotals)
+      setItemCategories(categories)
+      const totals = Object.values(categoryTotals)
+      const formattedTotals = totals.map((total) => +total.toFixed(2))
+
+      const newChartData = {
+        labels: categories,
+        datasets: [
+          {
+            label: "Amount Spent For Each Item Category In Dollars",
+            data: formattedTotals,
+            backgroundColor: chartColors,
+            hoverBackgroundColor: chartColors,
+            maxBarThickness: 80,
+          },
+        ],
+      }
+      setChartData(newChartData)
+    }
   }, [items])
 
   return (
     <div className="mt-4">
       <div className="text-center">
         {chartData && 
-          <BarChart data={chartData} totalCostOfAllItems={totalCostOfAllItems} categories={categories}/>}
+          <BarChart data={chartData} totalCostOfAllItems={totalCostOfAllItems} itemCategories={itemCategories}/>}
       </div>
         {items.length > 0 && (
           <table className="table table-striped">
