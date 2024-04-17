@@ -104,7 +104,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
     <div className="mt-4">
       <div className="text-center">
         {chartData && 
-          <BarChart data={chartData} totalCostOfAllItems={totalCostOfAllItems} itemCategories={itemCategories}/>}
+          <BarChart data={chartData} totalCostOfAllItems={totalCostOfAllItems} categories={itemCategories}/>}
       </div>
         {items.length > 0 && (
           <table className="table table-striped">

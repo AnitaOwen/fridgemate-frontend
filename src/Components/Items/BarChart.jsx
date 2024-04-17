@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Bar } from 'react-chartjs-2';
 
-const BarChart = ({data, totalCostOfAllItems, itemCategories}) => {
+const BarChart = ({data, totalCostOfAllItems, categories}) => {
   const [isVisible, setIsVisible] = useState(false)
 
   const toggleChart = () => {
@@ -12,7 +12,7 @@ const BarChart = ({data, totalCostOfAllItems, itemCategories}) => {
     scales: {
         x: {
             type: 'category',
-            labels: itemCategories,
+            labels: categories,
         },
         y: {
             beginAtZero: true,
