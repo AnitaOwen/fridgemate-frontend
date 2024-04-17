@@ -14,7 +14,9 @@ But that's not all – FridgeM8 goes beyond inventory management. Users can gain
 
 Join the FridgeM8 community today and take control of your fridge like never before. 
 
-[Visit the deployed FridgeM8 app.](https://main--fridgem8.netlify.app/)
+[Deployed Netlify link](https://main--fridgem8.netlify.app/)
+[Deployed Render Link](https://fridgem8-backend.onrender.com)
+
 
 ## Getting Started
 
