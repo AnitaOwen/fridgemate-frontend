@@ -6,7 +6,7 @@ function LandingPage({ toggleLogin }) {
       <h1 className="mb-4">Welcome!</h1>
       <h5>Manage fridge freshness, track expiration dates, and minimize food waste.</h5>
       <h5 className="mb-4">Simplify your kitchen routine today!</h5>
-      <img src="https://res.cloudinary.com/dveesfude/image/upload/c_scale,w_154/v1712932028/giphy.webp_aujbo2.webp" alt="dancing fridge gif"/>
+      <img src="https://res.cloudinary.com/dveesfude/image/upload/c_scale,w_172/v1712932028/giphy.webp_aujbo2.webp"/>
       {toggleLogin ? (
         <>
         <h4 className="mt-4">You are already logged in!</h4>
