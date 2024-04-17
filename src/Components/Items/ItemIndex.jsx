@@ -55,19 +55,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
       .catch((error) => console.error(error))
     }
   }
-
-  useEffect(() => {
-    const token = localStorage.getItem("token")
-    fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items`,{
-      headers: {
-        Authorization: `Bearer ${token}`,
-      }
-    })
-    .then((res) => res.json())
-    .then((data) => setItems(data.items));
-  }, [fridge_id])
-
-  useEffect(() => {
+  const calculateChartData = (items) => {
     if (items.length > 0) {
       const categoryTotals = items.reduce((acc, current) => {
         if (!acc[current.category]) {
@@ -82,7 +70,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
       const totals = Object.values(categoryTotals)
       const formattedTotals = totals.map((total) => +total.toFixed(2))
 
-      const newChartData = {
+      return {
         labels: categories,
         datasets: [
           {
@@ -94,8 +82,23 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
           },
         ],
       }
-      setChartData(newChartData)
     }
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    fetch(`${URL}/api/fridges/${user.id}/${fridge_id}/items`,{
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+    .then((res) => res.json())
+    .then((data) => setItems(data.items));
+  }, [fridge_id])
+
+  useEffect(() => {
+    const newChartData = calculateChartData(items)
+    setChartData(newChartData)
   }, [items])
 
   return (
