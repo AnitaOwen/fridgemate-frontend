@@ -87,10 +87,10 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
         datasets: [
           {
             label: "Amount Spent For Each Item Category In Dollars",
+            data: formattedTotals,
             backgroundColor: chartColors,
             hoverBackgroundColor: chartColors,
             maxBarThickness: 80,
-            data: formattedTotals,
           },
         ],
       }
@@ -102,7 +102,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
     <div className="mt-4">
       <div className="text-center">
         {chartData && 
-          <BarChart data={chartData} totalCostOfAllItems={totalCostOfAllItems} />}
+          <BarChart data={chartData} totalCostOfAllItems={totalCostOfAllItems} categories={categories}/>}
       </div>
         {items.length > 0 && (
           <table className="table table-striped">

@@ -1,13 +1,24 @@
 import { useState } from 'react'
 import { Bar } from 'react-chartjs-2';
 
-const BarChart = ({data, totalCostOfAllItems}) => {
+const BarChart = ({data, totalCostOfAllItems, categories}) => {
     const [isVisible, setIsVisible] = useState(false)
 
     const toggleChart = () => {
         setIsVisible(!isVisible)
     }
 
+    const options = {
+      scales: {
+        x: {
+          type: 'category', 
+          labels: categories,
+        },
+        y: {
+          beginAtZero: true,
+        },
+      },
+    };
   return (
     <>
     <button className="btn btn-outline-info btn-sm mb-3" onClick={toggleChart}>{isVisible ? 'Hide Chart' : 'Show Chart'}</button>

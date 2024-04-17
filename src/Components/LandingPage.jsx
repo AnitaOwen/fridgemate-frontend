@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function LandingPage({ toggleLogin }) {
   return (
-    <div className="mt-4 text-center">
+    <div className="mt-5 text-center">
       <h1 className="mb-4">Welcome!</h1>
       <h5>Manage fridge freshness, track expiration dates, and minimize food waste.</h5>
       <h5 className="mb-4">Simplify your kitchen routine today!</h5>
