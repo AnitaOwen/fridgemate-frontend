@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import Item from "./Item";
 import BarChart from "./BarChart";
+import Chart from 'chart.js/auto'
 const URL = import.meta.env.VITE_BASE_URL;
 
 const ItemIndex = ({ fridge_id, items, setItems }) => {
   const [chartData, setChartData] = useState(null)
-  const [itemCategories, setItemCategories] = useState([])
   const { user } = useOutletContext()
   const chartColors = [
     '#BA55D3', // Medium Orchid
@@ -80,7 +80,6 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
       }, {})
 
       const categories = Object.keys(categoryTotals)
-      setItemCategories(categories)
       const totals = Object.values(categoryTotals)
       const formattedTotals = totals.map((total) => +total.toFixed(2))
 
@@ -104,7 +103,7 @@ const ItemIndex = ({ fridge_id, items, setItems }) => {
     <div className="mt-4">
       <div className="text-center">
         {chartData && 
-          <BarChart data={chartData} totalCostOfAllItems={totalCostOfAllItems} categories={itemCategories}/>}
+          <BarChart data={chartData} totalCostOfAllItems={totalCostOfAllItems} />}
       </div>
         {items.length > 0 && (
           <table className="table table-striped">
