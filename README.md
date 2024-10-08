@@ -1,7 +1,3 @@
-# JWT Auth Frontend
-
-[Frontend Auth Instructions](./instructions.md)
-
 # FridgeM8
 
 ## Introduction
